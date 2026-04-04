@@ -32,6 +32,7 @@ fn main() {
     // difference
     let x = 5; // this is a variable
     let x = 'y'; // this is a same variable but with a different value
+    // this is a redeclaration of variables
 
     println!("the value of x is: {}", x);
 }
