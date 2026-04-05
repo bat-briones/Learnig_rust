@@ -40,10 +40,10 @@ fn main() {
     weel basically this is beacause the first value say, if im on then you have a debt with me
     how much? 128, then all number after me plus value in the debt
      */
-    let mut x: i8 = 127; // signed integer with 8 bits
+    let x: i8 = 127; // signed integer with 8 bits
     // if you say, well, this number is in your limit, what happen if you add 1 to this number?
     println!("x: {}", x); // this print -128 because of the overflow
 
-    x = x + 1; // this trigger an error in terminal 
-    println!("x: {}", x); // this print -128 because of the overflow
+    //x = x + 1; // this trigger an error in terminal
+    //println!("x: {}", x); // this print -128 because of the overflow
 }
