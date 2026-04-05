@@ -8,8 +8,8 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /workspace
-
 # Instalar rustlings globalmente en el contenedor
+ENV RUST_BACKTRACE=1
 RUN cargo install rustlings
 
 # Mantener el contenedor vivo
