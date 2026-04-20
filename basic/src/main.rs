@@ -102,4 +102,12 @@ fn main() {
     println!("second value of array: {}", second);
     println!("third value of array: {}", third);
     println!("fourth value of array: {}", fourth);
+
+    /*vector types: this is the list, the main difference with another tyypes is your size,
+    the vector is bassically a list with dynamic size
+    */
+    let basic_vector = vec![1, 2, 3, 4, 5]; // this is a vector of integers
+    println!("basic vector: {:?}", basic_vector); // this print the vector with debug format
+    let first_value_vector = basic_vector[0]; // this is the way to access the values of the vector, you can use the index of the value, starting from 0
+    println!("first value of vector: {}", first_value_vector);
 }
