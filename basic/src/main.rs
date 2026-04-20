@@ -46,4 +46,60 @@ fn main() {
 
     //x = x + 1; // this trigger an error in terminal
     //println!("x: {}", x); // this print -128 because of the overflow
+
+    /*
+    floating-point types (with comma):
+
+        */
+
+    let decimal: f32 = 3.14;
+    let decimal2 = 3.14;
+    println!("decimal: {}", decimal);
+    println!("decimal2: {}", decimal2);
+
+    /*
+    BOOLEAN TYPE:
+    the boolean type is saved in a byte
+
+     */
+
+    let boolean: bool = true; // in python is True
+    let boolean2: bool = false; // in python is False
+    println!("boolean: {}", boolean);
+    println!("boolean2: {}", boolean2);
+
+    // character type:
+    let character: char = 'a'; // in singles quotes
+    let character2: char = 'b'; // in singles quotes
+    println!("character: {}", character);
+    println!("character2: {}", character2);
+
+    // compound types:
+    // tuple type: a tuple is a group of values with different types, the values are separated by commas and the tuple is enclosed in parentheses
+    let tuple: (i32, f32, char) = (1, 3.14, 'a');
+    let (a, b, c) = tuple; // this is called destructuring, you can assign the values of the tuple to different variables
+    println!("tuple: {:?}", tuple); // this print the tuple with debug format
+    println!("a: {}, b: {}, c: {}", a, b, c);
+
+    let first_value = tuple.0; // this is the way to access the values of the tuple, you can use the index of the value, starting from 0
+    println!("first value: {}", first_value);
+
+    // its important say the tuple need to be choise your size, and your types, because if you want to change the size of the tuple,
+    // you need to change all the code that use this tuple
+
+    // array types: all values need to be of the same type, the values are separated by commas and the array is enclosed in square brackets
+    let array: [i32; 5] = [1, 2, 3, 4, 5]; // [type; size]
+    println!("array: {:?}", array); // this print the array with debug format 
+
+    let firts_value_array = array[0]; // this is the way to access the values of the array, you can use the index of the value, starting from 0
+
+    println!("first value of array: {}", firts_value_array);
+    let [_, second, third, fourth, fifth] = array; // destructuring of the array
+    println!("second value of array: {}", second);
+    println!("third value of array: {}", third);
+    println!("fourth value of array: {}", fourth);
+    println!("fifth value of array: {}", fifth);
+    println!("second value of array: {}", second);
+    println!("third value of array: {}", third);
+    println!("fourth value of array: {}", fourth);
 }
