@@ -48,4 +48,28 @@ fn main() {
     // disclaimer:
     // ints, floats, bools, chars, tuples and arrays are Copy types
     // String, Vec, and custom structs are Move types
+
+    /*
+    also you have more types of structs:
+    tuple structs; are exactly like tuples but with a name, they are useful when you want to create a
+    struct with a name but you dont care about the name of the fields or that names are not important for you, only the order of the fields, for example:
+    */
+    struct Color(u8, u8, u8); // RGB color
+    let red = Color(255, 0, 0);
+    println!("Red: ({}, {}, {})", &red.0, &red.1, &red.2);
+
+    /*
+    also you have unit-like structs; are a struct without fields,
+    but  why? JAJAJJA
+    well for example in python you need create a service in a class, bassically you are create one struct with one method
+    but without fields, in rust you can create a unit-like struct for this, for example:
+    */
+    struct Service;
+    impl Service {
+        fn do_something(&self) {
+            println!("Doing something...");
+        }
+    }
+    let service = Service;
+    service.do_something();
 }
