@@ -1,35 +1,51 @@
-fn main() {
-    let mensaje = "hola mundo".to_string();
-    let slice = &mensaje[5..].to_string(); // "hola "
-    println!("Mensaje completo: {}", &slice);
+/*
+!IMPORTANT: Mentalidad de Structs en Rust
 
-    primera_palabra(&mensaje);
-    primera_palabra(&slice);
+1. DATOS vs COMPORTAMIENTO:
+   - struct: Define qué datos guardamos (La estructura física en RAM).
+   - impl: Define qué funciones tiene (La lógica).
+
+2. COMPOSICIÓN > HERENCIA:
+   - No pienses: "Un Perro es un Animal".
+   - Piensa: "Un Perro tiene DatosDeAnimal y se comporta como el Trait Caminar".
+
+3. ZERO-COST:
+   - Usar un struct no hace el programa más lento que usar variables sueltas.
+     El compilador lo optimiza para que en el binario final sean solo offsets de memoria.
+*/
+
+struct User {
+    name: String,
+    age: u8, // 0..=255 you cant have more than 255 years old
 }
 
-/*
-!IMPORTANT: La RAM al Desnudo (String vs Bytes)
+fn main() {
+    let mut user1 = User {
+        name: "bat-briones".to_string(),
+        age: 30,
+    };
+    println!("User: {}, Age: {}", user1.name, user1.age);
+    user1.age += 1; // Cumpleaños feliz
+    println!(
+        "Happy Birthday! {} is now {} years old.",
+        user1.name, user1.age
+    );
+    let user2 = User {
+        age: 25,
+        ..user1 // Clonamos user1 pero con un nuevo nombre
+    };
+    // like js you can use the spread operator but in rust is
+    //
+    println!("User: {}, Age: {}", user2.name, user2.age);
 
-Texto:   "H  o  l  a     🦀"
-chars():  1  2  3  4  5   6    (La CPU trabaja para agruparlos)
-bytes(): [72,111,108,97, 32, 240,159,166,128] (Lo que lee la CPU realmente)
+    // when you define one struct of mutable type rememenber
+    // you can not choise some fields to mut, all the struct  is mutable
 
-- ¿Por qué as_bytes() encuentra el espacio (' ') tan rápido?
-  Porque simplemente busca el número 32 en el arreglo.
-- ¿Qué pasa si busco el byte 32 dentro del cangrejo por error?
-  UTF-8 es tan brillante que garantiza que ningún byte de un emoji
-  jamás será igual a 32. Es matemáticamente seguro.
-*/
-fn primera_palabra(cadena: &String) {
-    let bytes = cadena.as_bytes();
+    // warinig remembrer the ownership of the struct
+    // if you MOVE the struct now the original variable is not valid anymore
 
-    for (i, &item) in bytes.iter().enumerate() {
-        if item == b' ' {
-            // b' ' es la forma de escribir el byte para el espacio
-            println!("Primera palabra termina en el índice: {}", i);
-            break;
-        } else {
-            println!("Byte actual: {}", item);
-        }
-    }
+    //println!("User1: {}, Age: {}", user1.name, user1.age); // this is invalid because user1 was moved to user2
+    // disclaimer:
+    // ints, floats, bools, chars, tuples and arrays are Copy types
+    // String, Vec, and custom structs are Move types
 }
