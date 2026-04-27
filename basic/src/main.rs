@@ -1,43 +1,13 @@
 fn main() {
-    let my_question = Question {
-        question: String::from("Is Rust a good language?"),
-        answer: Option::TrueOption,
-    };
 
-    println!("Question: {}", my_question.question);
-    println!("Answer: {}", my_question.answer.is_true_let());
+    /*
+    the if let is way of check some cases, the main difference with
+    match is match need to check all cases, but if let only check one case, the rest of cases are ignored
 
-    let another_question = Question {
-        question: String::from("Is Rust a bad language?"),
-        answer: Option::FalseOption,
-    };
-    println!("Question: {}", another_question.question);
-    println!("Answer: {}", another_question.answer.is_false_match());
-}
-
-enum Option {
-    TrueOption,
-    FalseOption,
-}
-
-struct Question {
-    question: String,
-    answer: Option,
-}
-
-impl Option {
-    fn is_true_let(&self) -> bool {
-        if let Option::TrueOption = self {
-            true
-        } else {
-            false
-        }
-    }
-
-    fn is_false_match(&self) -> bool {
-        match self {
-            Option::FalseOption => false,
-            _ => true,
-        }
-    }
+    also exist the natural if, this is so different, because,
+    the normal if is to ckeck yes or no to achieve a goal, but you can not access the value of the variable.
+    in if let you can access the value of the variable and do not check yes o r no, this check the pattern of the variable,
+    and if the pattern is correct, you can access the value of the variable, but if the pattern is not correct, the code inside
+    the if let will not be executed.
+     */
 }
