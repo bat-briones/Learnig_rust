@@ -1,0 +1,9 @@
+services:
+  node-dev:
+    build: .
+    container_name: node_sandbox
+    volumes:
+      - .:/workspace
+    # Permite interactuar con la terminal del contenedor
+    stdin_open: true 
+    tty: true

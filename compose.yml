@@ -1,0 +1,10 @@
+
+services:
+  rust-dev:
+    build: .
+    container_name: rust_sandbox
+    volumes:
+      - .:/workspace
+    # Permite interactuar con la terminal del contenedor
+    stdin_open: true 
+    tty: true
