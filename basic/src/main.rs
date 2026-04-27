@@ -1,27 +1,22 @@
 fn main() {
-    let mut value: Vec<i32> = Vec::new();
+    use std::collections::HashMap;
 
-    value.push(32);
-    value.push(33);
+    let mut my_map = HashMap::new();
+    my_map.insert("one", 1);
 
-    for i in &value {
-        println!("The value is: {}", i);
-    }
+    let data = vec!["one".to_string(), "two".to_string(), "three".to_string()];
+    let values = vec![1, 2, 3];
+    let my_point = "one".to_string();
 
-    let mut count = 0;
+    let points: HashMap<_, _> = data.into_iter().zip(values.into_iter()).collect();
+    println!("The value is: {:?}", &points);
+    let better = points.get(&my_point).unwrap();
+    println!("The value is: {:?}", &better);
 
-    loop {
-        if count >= value.len() {
-            break;
-        }
-        println!("The value is: {}", value[count]);
-        count += 1;
-    }
-    count = 0;
-    while count < value.len() {
-        println!("The value is: {}", value[count]);
-        count += 1;
-    }
+    let name = String::from("Alice");
 
-    println!("The value is: {:?}", &value);
+    let name_value = String::from("Alice2");
+
+    let mut my_map2 = HashMap::new();
+    my_map2.insert(name, name_value);
 }
