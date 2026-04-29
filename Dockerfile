@@ -1,16 +1,22 @@
 FROM rust:1.94-slim
 
-# Instalar dependencias básicas que suele pedir Rust para compilar crates
+# Instalar dependencias básicas y Node.js
 RUN apt-get update && apt-get install -y \
     git \
     curl \
     build-essential \
+    nodejs \
+    npm \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /workspace
-# Instalar rustlings globalmente en el contenedor
+
+# Configurar Rust
 ENV RUST_BACKTRACE=1
 RUN cargo install rustlings
 
+# Verificar versiones instaladas
+RUN rustc --version && cargo --version && node --version && npm --version
+
 # Mantener el contenedor vivo
-CMD ["tail", "-f", "/dev/null"]
+CMD ["bash"]

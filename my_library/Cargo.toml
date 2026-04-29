@@ -1,0 +1,9 @@
+[workspace]
+
+# we define the members of the workspace, wich folder contains rust code
+members = ["core"]
+
+
+#Configuración de optimización común para todos los miembros
+[profile.release]
+lto = true # Link Time Optimization: el compilador analiza todo el grafo para eliminar código muerto
