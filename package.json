@@ -7,5 +7,7 @@
         "my_library/node/index.js",
         "my_library/node/index.d.ts",
         "my_library/node/*.node"
-    ]
-}
+    ],
+    "scripts": {
+        "postinstall": "cd my_library/node && npm run build"
+    }
