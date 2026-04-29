@@ -6,8 +6,9 @@
     "files": [
         "my_library/node/index.js",
         "my_library/node/index.d.ts",
-        "my_library/node/*.node"
-    ],
-    "scripts": {
-        "postinstall": "cd my_library/node && npm run build"
-    }
+        "my_library/node/@satanas.linux-x64-gnu.node",
+        "my_library/node/@satanas.win32-x64-msvc.node",
+        "my_library/node/@satanas.darwin-x64.node",
+        "my_library/node/@satanas.darwin-arm64.node"
+    ]
+}
