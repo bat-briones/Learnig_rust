@@ -1,0 +1,11 @@
+{
+    "name": "@empresa/satanas",
+    "version": "0.1.0",
+    "main": "my_library/node/index.js",
+    "types": "my_library/node/index.d.ts",
+    "files": [
+        "my_library/node/index.js",
+        "my_library/node/index.d.ts",
+        "my_library/node/*.node"
+    ]
+}
