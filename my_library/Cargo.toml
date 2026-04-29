@@ -1,8 +1,8 @@
 [workspace]
 
 # we define the members of the workspace, wich folder contains rust code
-members = ["core"]
-
+members = ["core","node"]
+resolver = "3"
 
 #Configuración de optimización común para todos los miembros
 [profile.release]
