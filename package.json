@@ -10,7 +10,5 @@
         "my_library/node/@satanas.win32-x64-msvc.node",
         "my_library/node/@satanas.darwin-x64.node",
         "my_library/node/@satanas.darwin-arm64.node"
-    ],
-    "scripts": {
-        "postinstall": "cd my_library/node && npm run build"
-    }
+    ]
+}
