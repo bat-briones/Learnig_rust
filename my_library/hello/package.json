@@ -9,6 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "satanas": "git+https://github.com/bat-briones/Learnig_rust.git#main:my_library/node"
+    "satanas": "git+https://github.com/bat-briones/Learnig_rust.git"
   }
 }
