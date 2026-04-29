@@ -140,7 +140,7 @@ dist
 /target
 Cargo.lock
 
-*.node
+# *.node  <- binaries must be committed for git-based npm installs
 .pnp.*
 .yarn/*
 !.yarn/patches
@@ -155,7 +155,3 @@ target/
 
 # Node: Ignora dependencias y binarios locales
 node_modules/
-node/*.node
-node/*.js
-node/*.d.ts
-!node/index.js # Excepción: solo si quieres subir el entrypoint

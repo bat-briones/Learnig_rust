@@ -119,7 +119,7 @@ dist
 /target
 Cargo.lock
 
-*.node
+# *.node  <- binaries must be committed for git-based npm installs
 .pnp.*
 .yarn/*
 !.yarn/patches
