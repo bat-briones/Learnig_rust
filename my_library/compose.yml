@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  my_library:
+    build: .
+    container_name: my_library
+    volumes:
+      - .:/workspace
+    stdin_open: true 
+    tty: true
+    working_dir: /workspace
+    command: tail -f /dev/null

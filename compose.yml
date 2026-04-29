@@ -1,15 +1,10 @@
 
-version: '3.8'
-
 services:
-  my_library:
+  rust-dev:
     build: .
-    container_name: my_library
+    container_name: rust_sandbox
     volumes:
       - .:/workspace
     # Permite interactuar con la terminal del contenedor
     stdin_open: true 
     tty: true
-    working_dir: /workspace
-    # Mantener el contenedor ejecutándose
-    command: tail -f /dev/null
